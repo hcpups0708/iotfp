@@ -53,4 +53,13 @@ router.post('/r/:index/:value', function(req, res, next) {
 	res.end();
 });
 
+router.post('/update', function(req, res, next) {
+	var params = req.query;
+	data.temperature.set(Number(params.t));
+	data.humidility.set(Number(params.h));
+	data.pressure.set(Number(params.p));
+	data.radar.set(Number(params.r), Number(params.d));
+	res.end();
+});
+
 module.exports = router;

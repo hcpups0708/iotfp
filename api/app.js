@@ -3,8 +3,8 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//var socketio = require('socket.io');
-//var http = require('http');
+var socketio = require('socket.io');
+var http = require('http');
 
 var routes = require(path.join(__dirname, 'routes'));
 
