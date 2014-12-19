@@ -58,7 +58,8 @@ router.post('/update', function(req, res, next) {
 	data.temperature.set(Number(params.t));
 	data.humidility.set(Number(params.h));
 	data.pressure.set(Number(params.p));
-	data.radar.set(Number(params.r), Number(params.d));
+	data.radar.set(Number(params.r), Number(params.d1));
+	data.radar.set(Number(params.r)+180, Number(params.d2));
 	res.end();
 });
 
