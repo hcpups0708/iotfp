@@ -1,0 +1,29 @@
+{
+  "name": "iotfp",
+  "version": "0.0.0",
+  "description": "An NCTU Iot 2014 Final Project group 11, by Chalos and Asus",
+  "main": "app.js",
+  "dependencies": {
+    "cookie-parser": "^1.3.3",
+    "body-parser": "^1.10.0",
+    "express": "^4.10.6",
+    "morgan": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcpups0708/iotfp.git"
+  },
+  "keywords": [
+    "iotfp"
+  ],
+  "author": "",
+  "license": "none",
+  "bugs": {
+    "url": "https://github.com/hcpups0708/iotfp/issues"
+  },
+  "homepage": "https://github.com/hcpups0708/iotfp"
+}
