@@ -1,4 +1,36 @@
 
+var direct = 's';
+
+var main = function() {
+	
+	document.onkeydown = function(e) {
+	    switch(e.keyCode) {
+	        case 37:
+	            direct = 'l';
+	            break;
+	        case 38:
+	            direct = 'f';
+	            break;
+	        case 39:
+	            direct = 'r';
+	            break;
+	        case 40:
+	            direct = 'b';
+	            break;
+	        default:
+	            direct = 's';
+	    }
+	}
+	
+	document.onkeyup = function(e) {
+		direct = 's';
+	}
+
+	setInterval(query, 1000);
+}; 
+
+document.onreadystatechange = main;
+
 var update = function(data){
 	console.log(data);
 	var UL = document.createElement('ul');
@@ -27,13 +59,9 @@ var update = function(data){
 
 var query = function() {
 	$.ajax({
-		url: '/getAll',
-		type: 'GET'
+		url: '/setDirectGetAll/'+direct,
+		type: 'POST'
 	}).done(function(data) {
 		update(data);
 	});
 }
-
-document.onreadystatechange = function() {
-	setInterval(query, 1000);
-};

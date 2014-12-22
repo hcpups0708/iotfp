@@ -83,4 +83,16 @@ router.post('/update', function(req, res, next) {
 	res.end();
 });
 
+router.post('/setDirectGetAll/:direct', function(req, res, next) {
+	var direct = req.params.direct;
+	console.log(direct);
+	data.movement.set(direct);
+	res.send({
+		h: data.humidility.get(),
+		t: data.temperature.get(),
+		p: data.pressure.get(),
+		r: data.radar.get()
+	});
+});
+
 module.exports = router;
