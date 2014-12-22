@@ -28,7 +28,7 @@ router.get('/r/:index', function(req, res, next) {
 
 router.get('/move', function(req, res, next) {
 	var result = data.movement.get() || 's';
-	console.log(result);
+	//console.log(result);
 	res.send(result);
 });
 
@@ -68,7 +68,7 @@ router.post('/r/:index/:value', function(req, res, next) {
 
 router.post('/move', function(req, res, next) {
 	var direct = req.query.direct;
-	console.log(direct);
+	//console.log(direct);
 	data.movement.set(direct);
 	res.end();
 });
