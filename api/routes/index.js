@@ -27,7 +27,9 @@ router.get('/r/:index', function(req, res, next) {
 });
 
 router.get('/move', function(req, res, next) {
-	res.end(data.movement.get() || 's');
+	var result = data.movement.get() || 's';
+	console.log(result);
+	res.send(result);
 });
 
 router.get('/getAll', function(req, res, next) {
