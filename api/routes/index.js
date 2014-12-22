@@ -26,6 +26,15 @@ router.get('/r/:index', function(req, res, next) {
 	else res.send({result:data.radar.get(Number(index))});
 });
 
+router.get('/getAll', function(req, res, next) {
+	res.send({
+		h: data.humidility.get(),
+		t: data.temperature.get(),
+		p: data.pressure.get(),
+		r: data.radar.get()
+	});
+});
+
 router.post('/p/:value', function(req, res, next) {
 	var value = req.params.value;
 	data.pressure.set(Number(value));

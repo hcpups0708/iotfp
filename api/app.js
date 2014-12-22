@@ -47,5 +47,6 @@ app.use(function(err, req, res, next) {
 	});
 });
 
-app.listen(3000);
+if(process.argv[2] == 'dev') app.listen(8080);
+else app.listen(80);
 module.exports = app;
