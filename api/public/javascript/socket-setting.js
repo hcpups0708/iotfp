@@ -9,7 +9,7 @@ var update = function(data){
 	var P = document.createElement('li');
 	P.innerText = data.p;
 	var R = document.createElement('li');
-	R.innerText = data.r.toString();
+	R.innerText = data.r.join('\n');
 
 	UL.setAttribute('id', 'MAIN');
 	UL.appendChild(H);
@@ -35,5 +35,5 @@ var query = function() {
 }
 
 document.onreadystatechange = function() {
-	setInterval(query, 500);
+	setInterval(query, 1000);
 };

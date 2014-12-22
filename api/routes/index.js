@@ -26,6 +26,10 @@ router.get('/r/:index', function(req, res, next) {
 	else res.send({result:data.radar.get(Number(index))});
 });
 
+router.get('/move', function(req, res, next) {
+	res.end(data.movement.get() || 's');
+});
+
 router.get('/getAll', function(req, res, next) {
 	res.send({
 		h: data.humidility.get(),
@@ -56,9 +60,13 @@ router.post('/t/:value', function(req, res, next) {
 router.post('/r/:index/:value', function(req, res, next) {
 	var index = req.params.index;
 	var value = req.params.value;
-	console.log(index);
-	console.log(value)
 	data.radar.set(Number(index), Number(value));
+	res.end();
+});
+
+router.post('/move', function(req, res, next) {
+	var direct = req.params.direct;
+	data.movement.set(direct);
 	res.end();
 });
 
