@@ -66,8 +66,8 @@ router.post('/r/:index/:value', function(req, res, next) {
 	res.end();
 });
 
-router.post('/move', function(req, res, next) {
-	var direct = req.query.direct;
+router.post('/move/:direct', function(req, res, next) {
+	var direct = req.params.direct;
 	//console.log(direct);
 	data.movement.set(direct);
 	res.end();
