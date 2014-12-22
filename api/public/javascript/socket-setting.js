@@ -1,9 +1,11 @@
 
 var direct = 's';
+var preDirect = 's';
 
 var main = function() {
 	
 	document.onkeydown = function(e) {
+	    preDirect = direct;
 	    switch(e.keyCode) {
 	        case 37:
 	            direct = 'l';
@@ -20,13 +22,17 @@ var main = function() {
 	        default:
 	            direct = 's';
 	    }
+	    if(preDirect !== direct) {
+	    	updateDirection();
+	    }
 	}
 	
 	document.onkeyup = function(e) {
-		direct = 's';
+		direct = preDirect = 's';
+		updateDirection();
 	}
 
-	setInterval(query, 1000);
+	setInterval(queryData, 1000);
 }; 
 
 document.onreadystatechange = main;
@@ -57,11 +63,18 @@ var update = function(data){
 	}
 }
 
-var query = function() {
+var queryData = function() {
 	$.ajax({
-		url: '/setDirectGetAll/'+direct,
-		type: 'POST'
+		url: '/getAll',
+		type: 'GET'
 	}).done(function(data) {
 		update(data);
+	});
+}
+
+var updateDirection = function() {
+	$.ajax({
+		url: '/move/' + direct,
+		type: 'POST'
 	});
 }
