@@ -162,8 +162,8 @@ function initChat() {
 
 
 function init() {
-  var room = window.location.hash.slice(1,9);
-  var role = window.location.hash.slice(10);
+  var room = 'asusRoom';
+  var role = window.location.hash.slice(1,2);
 
   addToChat("Room: "+room, "black");
   addToChat("Role: "+role, "black");
@@ -184,7 +184,7 @@ function init() {
             addToChat("name: " + sourceInfo.label.toString(), "black");
             addToChat("facing: " + sourceInfo.facing.toString(), "black");
             addToChat("id: " + sourceInfo.id, "black");
-            if(sourceInfo.facing=='user') {
+            if(sourceInfo.facing=='environment') {
               vid = sourceInfo.id;
               addToChat("setId=" + sourceInfo.id, "black");
             }
