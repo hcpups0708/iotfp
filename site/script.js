@@ -184,7 +184,9 @@ function init() {
             addToChat("name: " + sourceInfo.label.toString(), "black");
             addToChat("facing: " + sourceInfo.facing.toString(), "black");
             addToChat("id: " + sourceInfo.id, "black");
-            vid=sourceInfo.id;
+            if(sourceInfo.facing=='environment')
+              vid=sourceInfo.id;
+            addToChat("setId=" + sourceInfo.id, "black");
           }
         });
       }
