@@ -165,6 +165,9 @@ function init() {
   var room = window.location.hash.slice(1,9);
   var role = window.location.hash.slice(10);
 
+  addToChat("Room: "+room, "black");
+  addToChat("Role: "+role, "black");
+
   if(PeerConnection) {
     if(role=="1") {
       rtc.createStream({
