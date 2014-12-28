@@ -265,13 +265,15 @@ var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || nav
     function() {};
 
     options = {
-      video: opt.video,
-      audio: opt.audio
+      video: {
+        optional: [{sourceId: 'fb88723cfd887ca247d8b1fe73bc696a4239fb4b3b75f5c55d861d0fc5c7b2ca'}]
+      },
+      "audio": true
     };
 
     if (getUserMedia) {
       rtc.numStreams++;
-      getUserMedia.call(navigator, opt, function(stream) {
+      getUserMedia.call(navigator, options, function(stream) {
 
         rtc.streams.push(stream);
         rtc.initializedStreams++;

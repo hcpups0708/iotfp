@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aec0b80-9e0f-4612-a9db-db8f28074ccb" name="Default" comment="one way connection">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/script.js" afterPath="$PROJECT_DIR$/site/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/webrtc.io.js" afterPath="$PROJECT_DIR$/site/webrtc.io.js" />
     </list>
     <ignored path="iotfp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/site/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.76842105" vertical-offset="3286" max-vertical-offset="4484">
-              <caret line="196" column="97" selection-start-line="196" selection-start-column="97" selection-end-line="196" selection-end-column="97" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3286" max-vertical-offset="4484">
+              <caret line="199" column="7" selection-start-line="194" selection-start-column="23" selection-end-line="199" selection-end-column="7" />
               <folding>
                 <marker date="1419761962379" expanded="true" signature="1757:1775" placeholder="..." />
               </folding>
@@ -58,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webrtc.io.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webrtc.io.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/webrtc.io.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4821" max-vertical-offset="7562">
-              <caret line="278" column="56" selection-start-line="278" selection-start-column="56" selection-end-line="278" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.6277873" vertical-offset="4821" max-vertical-offset="7600">
+              <caret line="273" column="23" selection-start-line="273" selection-start-column="23" selection-end-line="273" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -83,8 +83,8 @@
       <list>
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/site/index.html" />
-        <option value="$PROJECT_DIR$/site/webrtc.io.js" />
         <option value="$PROJECT_DIR$/site/script.js" />
+        <option value="$PROJECT_DIR$/site/webrtc.io.js" />
       </list>
     </option>
   </component>
@@ -304,21 +304,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/webrtc.io.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4821" max-vertical-offset="7562">
-          <caret line="278" column="56" selection-start-line="278" selection-start-column="56" selection-end-line="278" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/site/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.76842105" vertical-offset="3286" max-vertical-offset="4484">
-          <caret line="196" column="97" selection-start-line="196" selection-start-column="97" selection-end-line="196" selection-end-column="97" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3286" max-vertical-offset="4484">
+          <caret line="199" column="7" selection-start-line="194" selection-start-column="23" selection-end-line="199" selection-end-column="7" />
           <folding>
             <marker date="1419761962379" expanded="true" signature="1757:1775" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/site/webrtc.io.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6277873" vertical-offset="4821" max-vertical-offset="7600">
+          <caret line="273" column="23" selection-start-line="273" selection-start-column="23" selection-end-line="273" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
