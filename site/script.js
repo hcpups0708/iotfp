@@ -227,5 +227,5 @@ function init() {
 }
 
 window.onresize = function(event) {
-  subdivideVideos();
+  //subdivideVideos();
 };
