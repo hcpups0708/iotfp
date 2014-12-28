@@ -193,7 +193,9 @@ function init() {
       }
 
       rtc.createStream({
-        "video": {optional: [{sourceId: vid}]},
+        video: {
+          optional: [{sourceId: vid}]
+        },
         "audio": true
       }, function (stream) {
         document.getElementById('video').src = URL.createObjectURL(stream);

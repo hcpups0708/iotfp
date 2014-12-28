@@ -271,7 +271,7 @@ var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || nav
 
     if (getUserMedia) {
       rtc.numStreams++;
-      getUserMedia.call(navigator, options, function(stream) {
+      getUserMedia.call(navigator, opt, function(stream) {
 
         rtc.streams.push(stream);
         rtc.initializedStreams++;
