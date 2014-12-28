@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4aec0b80-9e0f-4612-a9db-db8f28074ccb" name="Default" comment="one way connection">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/index.html" afterPath="$PROJECT_DIR$/site/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/script.js" afterPath="$PROJECT_DIR$/site/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/site/webrtc.io.js" afterPath="$PROJECT_DIR$/site/webrtc.io.js" />
     </list>
     <ignored path="iotfp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,10 +39,10 @@
       <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/site/script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22113504" vertical-offset="3516" max-vertical-offset="4389">
-              <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.444227" vertical-offset="3060" max-vertical-offset="4389">
+              <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
               <folding>
-                <marker date="1419759966819" expanded="true" signature="1757:1775" placeholder="..." />
+                <marker date="1419760391521" expanded="true" signature="1757:1775" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -316,10 +314,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/site/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22113504" vertical-offset="3516" max-vertical-offset="4389">
-          <caret line="191" column="24" selection-start-line="191" selection-start-column="24" selection-end-line="191" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.444227" vertical-offset="3060" max-vertical-offset="4389">
+          <caret line="173" column="14" selection-start-line="173" selection-start-column="14" selection-end-line="173" selection-end-column="14" />
           <folding>
-            <marker date="1419759966819" expanded="true" signature="1757:1775" placeholder="..." />
+            <marker date="1419760391521" expanded="true" signature="1757:1775" placeholder="..." />
           </folding>
         </state>
       </provider>

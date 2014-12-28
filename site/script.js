@@ -179,11 +179,11 @@ function init() {
         MediaStreamTrack.getSources(function (sourceInfos) {
           for (var i = 0; i != sourceInfos.length; ++i) {
             var sourceInfo = sourceInfos[i];
-            console.log("Source "+i);
-            console.log("kind: " + sourceInfo.kind.toString());
-            console.log("name: " + sourceInfo.label.toString());
-            console.log("facing: " + sourceInfo.facing.toString());
-            console.log("id: " + sourceInfo.id);
+            addToChat("Source "+i, "black");
+            addToChat("kind: " + sourceInfo.kind.toString(), "black");
+            addToChat("name: " + sourceInfo.label.toString(), "black");
+            addToChat("facing: " + sourceInfo.facing.toString(), "black");
+            addToChat("id: " + sourceInfo.id, "black");
             vid=sourceInfo.id;
           }
         });
