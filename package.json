@@ -5,6 +5,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "webrtc.io": "latest"
   }
 }
