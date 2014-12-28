@@ -170,14 +170,33 @@ function init() {
 
   if(PeerConnection) {
     if(role=="1") {
+
+      var vid;
+
+      if (typeof MediaStreamTrack === 'undefined'){
+        alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
+      } else {
+        MediaStreamTrack.getSources(function (sourceInfos) {
+          for (var i = 0; i != sourceInfos.length; ++i) {
+            var sourceInfo = sourceInfos[i];
+            console.log("Source "+i);
+            console.log("kind: " + sourceInfo.kind.toString());
+            console.log("name: " + sourceInfo.label.toString());
+            console.log("facing: " + sourceInfo.facing.toString());
+            console.log("id: " + sourceInfo.id);
+            vid=sourceInfo.id;
+          }
+        });
+      }
+
       rtc.createStream({
-        "video": true,
+        "video": {optional: [{sourceId: vid}]},
         "audio": true
       }, function (stream) {
-        document.getElementById('you').src = URL.createObjectURL(stream);
-        videos.push(document.getElementById('you'));
+        document.getElementById('video').src = URL.createObjectURL(stream);
+        //videos.push(document.getElementById('you'));
         //rtc.attachStream(stream, 'you');
-        subdivideVideos();
+        //subdivideVideos();
       });
     }
   } else {
@@ -189,10 +208,8 @@ function init() {
   rtc.on('add remote stream', function(stream, socketId) {
     if(role=="2") {
       console.log("ADDING REMOTE STREAM...");
-      var clone = cloneVideo('you', socketId);
-      document.getElementById(clone.id).setAttribute("class", "");
-      rtc.attachStream(stream, clone.id);
-      subdivideVideos();
+      document.getElementById('video').src=URL.createObjectURL(stream);
+      //videos.push(document.getElementById('video'));
     }
   });
   rtc.on('disconnect stream', function(data) {

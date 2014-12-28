@@ -265,8 +265,8 @@ var getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || nav
     function() {};
 
     options = {
-      video: !!opt.video,
-      audio: !!opt.audio
+      video: opt.video,
+      audio: opt.audio
     };
 
     if (getUserMedia) {
