@@ -194,7 +194,7 @@ function init() {
 
       rtc.createStream({
         video: {
-          optional: [{sourceId: vid}]
+          optional: [{sourceId: 'fb88723cfd887ca247d8b1fe73bc696a4239fb4b3b75f5c55d861d0fc5c7b2ca'}]
         },
         "audio": true
       }, function (stream) {
