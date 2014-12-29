@@ -50,7 +50,8 @@ Radar.renderData = function(canvas, data) {
 	ctx.beginPath();
     ctx.moveTo(array[0], array[1]);
     for(var i=2; i< array.length-1; i+=2) {
-    	if((array[i-2] !== canvas.width/2 || array[i+1-2] !== canvas.height/2) && (array[i] !== canvas.width/2 || array[i+1] !== canvas.height/2)) {
+    	if((array[i-2] !== canvas.width/2 || array[i+1-2] !== canvas.height/2) 
+    		&& (array[i] !== canvas.width/2 || array[i+1] !== canvas.height/2)) {
     		ctx.lineTo(array[i], array[i+1]);
     	} else {
         	ctx.moveTo(array[i], array[i+1]);

@@ -65,9 +65,9 @@ router.post('/t/:value', function(req, res, next) {
 });
 
 router.post('/r/:index/:value', function(req, res, next) {
-	var index = req.params.index;
+	var index = Math.floor(Number(req.params.index)/2);
 	var value = req.params.value;
-	if(value !== 0) data.radar.set(Number(index), Number(value));
+	if(value !== 0) data.radar.set(index, Number(value));
 	res.end();
 });
 
@@ -90,8 +90,10 @@ router.post('/update', function(req, res, next) {
 	data.humidility.set(Number(params.h));
 	data.pressure.set(Number(params.p));
 	data.compass.set(Number(params.c));
-	if(Number(params.d1) !== 0) data.radar.set(Number(params.r), Number(params.d1));
-	if(Number(params.d2) !== 0) data.radar.set(Number(params.r)+18, Number(params.d2));
+
+	var index = Math.floor(Number(params.r)/2);
+	if(Number(params.d1) !== 0) data.radar.set(index, Number(params.d1));
+	if(Number(params.d2) !== 0) data.radar.set(index+9, Number(params.d2));
 	res.end();
 });
 
