@@ -1,22 +1,15 @@
 
+var radarSize = 300;
+var dataSize = window.innerWidth - radarSize;
+
 var direct = 's';
 var preDirect = 's';
 var doc = {};
 
 var main = function() {
-	/*var H = document.createElement('div')
-	H.setAttribute('id', 'H');
-	var T = document.createElement('div')
-	T.setAttribute('id', 'T');
-	var P = document.createElement('div')
-	P.setAttribute('id', 'P');
-	*/
-	var radar = Radar.init();
-	var data = dataBlock.init();
+	var radar = Radar.init(radarSize);
+	var data = dataBlock.init(dataSize);
 
-	//document.body.appendChild(H);
-	//document.body.appendChild(T);
-	//document.body.appendChild(P);
 	document.body.appendChild(radar);
 	Radar.drawBase();
 

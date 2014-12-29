@@ -63,8 +63,8 @@ Radar.renderData = function(canvas, data) {
     }
 }
 
-Radar.init = function() {
-	var rSize = 300;
+Radar.init = function(_w) {
+	var rSize = _w;
 
 	var radar = document.createElement('div');
 	var radarStyle = 'position:absolute;bottom:0px;right:0px;z-index:1;height:{size}px;width:{size}px;';

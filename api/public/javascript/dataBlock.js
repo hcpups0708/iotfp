@@ -1,9 +1,9 @@
 
 var dataBlock = {};
 
-dataBlock.init = function() {
+dataBlock.init = function(_w) {
 	var height = 100;
-	var width = 500;
+	var width = _w;
 
 	var div = document.createElement('div');
 	var divStyle = 'position:absolute;bottom:0px;left:0px;z-index:1;height:{h}px;width:{w}px;';
@@ -33,8 +33,6 @@ dataBlock.drawBase = function() {
 	var canvas = document.getElementById('dBase');
 	var ctx = canvas.getContext('2d');
 
-	ctx.clearRect(0 ,0 , canvas.width, canvas.height);
-
 	ctx.fillStyle = 'black';
 	ctx.rect(0, 0, canvas.width, canvas.height);
 	ctx.fill();
@@ -59,6 +57,7 @@ dataBlock.renderData = function(canvas, myData) {
 	//var canvas = document.getElementById('dataRender');
 	var ctx = canvas.getContext('2d');
 
+	ctx.clearRect(0 ,0 , canvas.width, canvas.height);
 	var color = ['blue', 'red', 'green'];
 
 	var width = canvas.width/myData.length;
