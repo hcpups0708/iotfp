@@ -26,8 +26,8 @@ int32_t lastMicros;
 
 //Servo
 Servo myservo;  // create servo object to control a servo
-int pos = 90;
-int dir = 10;
+int pos = 20;
+int dir = 20;
 
 //Ultra sonic
 long duration1, distance1; // Duration used to calculate distance
@@ -55,7 +55,7 @@ void setup() {
   pinMode(echoPin2, INPUT);
   
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
-  myservo.write(90);  
+  myservo.write(0);  
   
   //while(!Serial);    // wait for Network Serial to open
   Serial.println("Initializing I2C devices...");
@@ -90,7 +90,7 @@ void loop() {
 
 void updateData() {
   
-  if(pos==170||pos==0)
+  if(pos==160||pos==0)
     dir=-dir;
   myservo.write(pos);
   pos+=dir;  
@@ -111,7 +111,7 @@ void updateData() {
   while (micros() - lastMicros < barometer.getMeasureDelayMicroseconds());
   // read calibrated pressure value in Pascals (Pa)
   float pressure = barometer.getPressure();
-  
+    
   //distance 1
   digitalWrite(trigPin1, LOW); 
   delayMicroseconds(2);
@@ -120,15 +120,33 @@ void updateData() {
   digitalWrite(trigPin1, LOW);
   duration1 = pulseIn(echoPin1, HIGH);
   distance1 = duration1/58.2;
+  if(distance1==0){
+    digitalWrite(trigPin1, LOW); 
+    delayMicroseconds(2);
+    digitalWrite(trigPin1, HIGH);
+    delayMicroseconds(10); 
+    digitalWrite(trigPin1, LOW);
+    duration1 = pulseIn(echoPin1, HIGH);
+    distance1 = duration1/58.2;
+  }
   
   //distance 2
-  digitalWrite(trigPin1, LOW); 
+  digitalWrite(trigPin2, LOW); 
   delayMicroseconds(2);
-  digitalWrite(trigPin1, HIGH);
+  digitalWrite(trigPin2, HIGH);
   delayMicroseconds(10); 
-  digitalWrite(trigPin1, LOW);
-  duration2 = pulseIn(echoPin1, HIGH);
+  digitalWrite(trigPin2, LOW);
+  duration2 = pulseIn(echoPin2, HIGH);
   distance2 = duration2/58.2;
+  if(distance2==0){
+    digitalWrite(trigPin2, LOW); 
+    delayMicroseconds(2);
+    digitalWrite(trigPin2, HIGH);
+    delayMicroseconds(10); 
+    digitalWrite(trigPin2, LOW);
+    duration2 = pulseIn(echoPin2, HIGH);
+    distance2 = duration2/58.2;
+  }
   
   //heading
   mag.getHeading(&mx, &my, &mz);
