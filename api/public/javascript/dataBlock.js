@@ -15,7 +15,7 @@ dataBlock.init = function(_w) {
 	base.setAttribute('id', 'dBase');
 	base.setAttribute('height', height);
 	base.setAttribute('width', width);
-	base.setAttribute('style', 'z-index:2;position:absolute;opacity:0.5;margin:0px;');
+	base.setAttribute('style', 'z-index:2;position:absolute;opacity:0.7;margin:0px;');
 
 	var data = document.createElement('canvas');
 	data.setAttribute('id', 'dData');
