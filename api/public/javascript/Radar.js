@@ -35,13 +35,17 @@ Radar.renderData = function(canvas, data) {
 	ctx.clearRect(0 ,0 , canvas.width, canvas.height);
 
     ctx.fillStyle = 'green';
-    data.forEach(function(v,i){
+    ctx.strokeStyle = 'white';
+    data.forEach(function(v,i) {
 		var x = canvas.width/2;
 		var y = canvas.height/2;
 		var r = v * (canvas.height/2)/150;
 		var iInit = (36 - 2 * i  - 1) * 10 * Math.PI / 180;
 		var iFinal = (36 - 2 * i + 1) * 10 * Math.PI / 180;
+		ctx.beginPath();
+		ctx.moveTo(x,y);
 		ctx.arc(x,y,r,iInit,iFinal);
+		ctx.closePath();
 		ctx.fill();
     });
 }
