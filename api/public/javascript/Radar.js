@@ -35,6 +35,7 @@ Radar.renderData = function(canvas, data) {
 
     var array = data.map(function(v, i){
     	var _v = v * (canvas.height/2)/150;
+    	if(_v < 15) _v = 15;
 		return [
 			Math.cos(i*10*Math.PI / 180) * _v + canvas.width/2,
 			Math.sin(i*10*Math.PI / 180) * _v + canvas.height/2
