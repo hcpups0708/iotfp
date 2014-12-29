@@ -9,10 +9,10 @@ Radar.drawBase = function() {
 	ctx.rect(0, 0, canvas.width, canvas.height);
 	ctx.fill();
 
-	var radius = [150, 120, 90, 60, 30];
+	var radius = [100, 80, 60, 40, 20];
 	ctx.lineWidth = 2;
 	radius.forEach(function(value, index) {
-		var _value = value * (canvas.height/2)/150;
+		var _value = value * (canvas.height/2)/100;
 		ctx.beginPath();
 		ctx.strokeStyle = 'green';
 		ctx.arc(canvas.width/2, canvas.height/2, _value, 0, 2 * Math.PI);
@@ -25,7 +25,7 @@ Radar.drawBase = function() {
 
 	radius.forEach(function(value, index) {
 		if(index == 0) return;
-		var _value = value * (canvas.height/2)/150;
+		var _value = value * (canvas.height/2)/100;
 		ctx.strokeText(value.toString(), (canvas.width-blockwidth)/2, canvas.height/2-_value);
 	});
 }
@@ -39,8 +39,8 @@ Radar.renderData = function(canvas, data) {
     data.forEach(function(v,i) {
 		var x = canvas.width/2;
 		var y = canvas.height/2;
-		var r = v * (canvas.height/2)/150; 
-		r = (r > 150)? 150:r;
+		var r = v * (canvas.height/2)/100; 
+		r = (r > 100)? 100:r;
 		r = (r < 15)? 15:r;
 		var iInit = (36 - 2 * i  - 1) * 10 * Math.PI / 180;
 		var iFinal = (36 - 2 * i + 1) * 10 * Math.PI / 180;
