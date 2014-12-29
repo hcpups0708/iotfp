@@ -1,9 +1,34 @@
 
 var direct = 's';
 var preDirect = 's';
+var doc = {};
 
 var main = function() {
-	
+	/*var H = document.createElement('div')
+	H.setAttribute('id', 'H');
+	var T = document.createElement('div')
+	T.setAttribute('id', 'T');
+	var P = document.createElement('div')
+	P.setAttribute('id', 'P');
+	*/
+	var radar = Radar.init();
+	var data = dataBlock.init();
+
+	//document.body.appendChild(H);
+	//document.body.appendChild(T);
+	//document.body.appendChild(P);
+	document.body.appendChild(radar);
+	Radar.drawBase();
+
+	document.body.appendChild(data);
+	dataBlock.drawBase();
+
+	doc.H = document.getElementById('H');
+	doc.T = document.getElementById('T');
+	doc.P = document.getElementById('P');
+	doc.R2 = document.getElementById('rData');
+	doc.D2 = document.getElementById('dData');
+
 	document.onkeydown = function(e) {
 	    preDirect = direct;
 	    switch(e.keyCode) {
@@ -35,32 +60,9 @@ var main = function() {
 	setInterval(queryData, 1000);
 }; 
 
-document.onreadystatechange = main;
-
-var update = function(data){
-	console.log(data);
-	var UL = document.createElement('ul');
-	var H = document.createElement('li');
-	H.innerText = data.h;
-	var T = document.createElement('li');
-	T.innerText = data.t;
-	var P = document.createElement('li');
-	P.innerText = data.p;
-	var R = document.createElement('li');
-	R.innerText = data.r.join('\n');
-
-	UL.setAttribute('id', 'MAIN');
-	UL.appendChild(H);
-	UL.appendChild(T);
-	UL.appendChild(P);
-	UL.appendChild(R);
-
-	var old = document.getElementById('MAIN');
-	if(old) {
-		document.body.replaceChild(UL, old);
-	} else {
-		document.body.appendChild(UL);
-	}
+var update = function(data) {
+	dataBlock.renderData(doc.D2, [data.h, data.t, data.p]);
+	Radar.renderData(doc.R2, data.r);
 }
 
 var queryData = function() {
@@ -78,3 +80,5 @@ var updateDirection = function() {
 		type: 'POST'
 	});
 }
+
+$(document).ready(main);

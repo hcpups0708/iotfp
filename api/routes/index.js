@@ -20,6 +20,10 @@ router.get('/t', function(req, res, next) {
 	res.send({result:data.temperature.get()});
 });
 
+router.get('/c', function(req, res, next) {
+	res.send({result:data.compass.get()});
+});
+
 router.get('/r/:index', function(req, res, next) {
 	var index = req.params.index;
 	if(index === 'all') res.send({result:data.radar.get()});
@@ -37,6 +41,7 @@ router.get('/getAll', function(req, res, next) {
 		h: data.humidility.get(),
 		t: data.temperature.get(),
 		p: data.pressure.get(),
+		c: data.compass.get(),
 		r: data.radar.get()
 	});
 });
@@ -66,6 +71,12 @@ router.post('/r/:index/:value', function(req, res, next) {
 	res.end();
 });
 
+router.post('/c/:value', function(req, res, next) {
+	var value = req.params.value;
+	data.compass.set(Number(value));
+	res.end();
+});
+
 router.post('/move/:direct', function(req, res, next) {
 	var direct = req.params.direct;
 	//console.log(direct);
@@ -78,6 +89,7 @@ router.post('/update', function(req, res, next) {
 	data.temperature.set(Number(params.t));
 	data.humidility.set(Number(params.h));
 	data.pressure.set(Number(params.p));
+	data.compass.set(Number(params.c));
 	data.radar.set(Number(params.r), Number(params.d1));
 	data.radar.set(Number(params.r)+18, Number(params.d2));
 	res.end();
@@ -91,6 +103,7 @@ router.post('/setDirectGetAll/:direct', function(req, res, next) {
 		h: data.humidility.get(),
 		t: data.temperature.get(),
 		p: data.pressure.get(),
+		c: data.compass.get(),
 		r: data.radar.get()
 	});
 });

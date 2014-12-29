@@ -6,6 +6,7 @@ data.pressure = new GSeter();
 data.humidility = new GSeter();
 data.temperature = new GSeter();
 data.radar = new GSeter(36);
+data.compass = new GSeter();
 data.movement = new GSeter();
 
 module.exports = data;
