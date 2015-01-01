@@ -57,6 +57,7 @@ function removeVideo(socketId) {
 }
 
 function addToChat(msg, color) {
+  return;
   var messages = document.getElementById('messages');
   msg = sanitize(msg);
   if(color) {
@@ -223,7 +224,7 @@ function init() {
   });
   initFullScreen();
   initNewRoom();
-  initChat();
+  //initChat();
 }
 
 window.onresize = function(event) {
