@@ -224,7 +224,7 @@ function init() {
   });
   initFullScreen();
   initNewRoom();
-  //initChat();
+  initChat();
 }
 
 window.onresize = function(event) {
