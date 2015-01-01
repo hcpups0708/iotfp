@@ -45,7 +45,7 @@ function init() {
     alert('Your browser is not supported or you have to turn on flags. In chrome you go to chrome://flags and turn on Enable PeerConnection remember to restart chrome');
   }
 
-  rtc.connect("ws:" + window.location.href.substring(window.location.protocol.length).split('#')[0].slice(0, -1) + ':8080/', room);
+  rtc.connect("ws://" + window.location.hostname + ':8080/', room);
 
   rtc.on('add remote stream', function(stream, socketId) {
     if(role=="2") {
