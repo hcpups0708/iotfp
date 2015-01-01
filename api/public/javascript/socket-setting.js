@@ -1,6 +1,7 @@
 
 var radarSize = 300;
 var dataSize = window.innerWidth - radarSize;
+var compassSize = 200;
 
 var direct = 's';
 var preDirect = 's';
@@ -9,6 +10,7 @@ var doc = {};
 var main = function() {
 	var radar = Radar.init(radarSize);
 	var data = dataBlock.init(dataSize);
+	var compass = Compass.init(compassSize);
 
 	document.body.appendChild(radar);
 	Radar.drawBase();
@@ -16,11 +18,15 @@ var main = function() {
 	document.body.appendChild(data);
 	dataBlock.drawBase();
 
+	document.body.appendChild(compass);
+	Compass.drawBase();
+
 	doc.H = document.getElementById('H');
 	doc.T = document.getElementById('T');
 	doc.P = document.getElementById('P');
 	doc.R2 = document.getElementById('rData');
 	doc.D2 = document.getElementById('dData');
+	doc.C2 = document.getElementById('cData');
 
 	document.onkeydown = function(e) {
 	    preDirect = direct;
@@ -56,6 +62,7 @@ var main = function() {
 var update = function(data) {
 	dataBlock.renderData(doc.D2, [data.h, data.t, data.p]);
 	Radar.renderData(doc.R2, data.r);
+	Compass.rotateTo(doc.C2, data.c, 300);
 }
 
 var queryData = function() {
