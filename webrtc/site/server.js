@@ -5,8 +5,6 @@ var webRTC = require('webrtc.io').listen(server);
 var port = process.env.PORT || 8080;
 server.listen(port);
 
-
-
 app.get('/', function(req, res) {
   res.sendfile(__dirname + '/index.html');
 });
