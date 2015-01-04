@@ -27,7 +27,7 @@ router.post('/move/:direct', function(req, res, next) {
 	res.end();
 });
 
-router.post('/update?', function(req, res, next) {
+router.post('/update', function(req, res, next) {
 	var params = req.body;
 	console.log(params);
 	data.temperature.set(Number(params.t));
