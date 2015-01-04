@@ -1,0 +1,74 @@
+<html>
+<head>
+</head>
+<body>
+	<video id="video" autoplay style="width:100%;"></video>
+	<pre id="log"></pre>
+	
+	<script src="/webrtc.io.js"></script>
+	<script>
+
+		var logger = document.getElementById('log');
+		var origin = window.location.host;
+
+		if(PeerConnection){
+			MediaStreamTrack.getSources(function (sourceInfo) {
+				var started = false;
+				sourceInfo.forEach(function(info){
+					printSourceInfo(info);
+					if(info.kind.toString() == 'video' && info.facing.toString() == 'environment') {
+						logger.innerText += 'back camera found\n';
+						startRtc(info.id.toString());
+						started = true;
+					}
+				});
+
+				if(!started) {
+					logger.innerText += 'no back camera found\n';
+					startRtc();
+				}
+			});
+		}
+
+		function printSourceInfo(info) {
+			logger.innerText += 'kind : ' + info.kind.toString() +'\n';
+			logger.innerText += 'name : ' + info.label.toString() +'\n';
+			logger.innerText += 'facing : ' + info.facing.toString() +'\n';
+			logger.innerText += 'id : ' + info.id.toString() +'\n---------\n';
+		}
+
+		function startRtc(cameraId) {
+			rtc.connect('ws://'+origin, 'iotfp');
+
+			var videoConfig = true;
+			if(cameraId) {
+				videoConfig = {
+					optional: [{sourceId:cameraId}]
+				};
+				logger.innerText += JSON.stringify(videoConfig) + '\n';
+			}
+
+			rtc.createStream({
+				"video": videoConfig,
+				"audio": false
+			}, function(stream){
+				logger.innerText += 'createStream\n';
+				rtc.attachStream(stream, 'video');
+			});
+
+			/*
+			rtc.on('add remote stream', function(stream, socketId){
+				logger.innerText += 'add remote stream\n';
+				rtc.attachStream(stream, 'video');
+			});
+
+			rtc.on('disconnect stream', function(data) {
+				logger.innerText += 'remove ' + data;
+			});
+			*/
+		}
+
+	</script>
+
+</body>
+</html>
