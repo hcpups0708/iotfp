@@ -132,6 +132,8 @@ void updateData() {
 
 void updatePos(){
   dataString = "{\"r\"=";
+  if(dir<0)
+    dataString +="-";
   dataString += pos/10;
   d1String = ",\"d1\":[";
   d2String = ",\"d2\":[";
