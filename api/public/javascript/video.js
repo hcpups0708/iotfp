@@ -4,7 +4,6 @@ var rtcOrigin = 'chalos2.nctucs.net:8081';
 var VideoStart = function() {
 	var video = document.createElement('video');
 	video.setAttribute('id', 'video');
-	video.setAttribute('style', 'width:100%;');
 	document.body.appendChild(video);
 
 	startRtc();
