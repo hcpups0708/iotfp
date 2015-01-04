@@ -5,7 +5,7 @@ var app = express();
 var server = require('http').createServer(app);
 var webRTC = require('webrtc.io').listen(server);
 
-server.listen(8081);
+//server.listen(8081);
 
 app.use(express.static(__dirname + '/public/javascript'));
 
@@ -16,3 +16,5 @@ app.get('/', function(req,res) {
 webRTC.on('connect', function() {
 	console.log('connected');
 });
+
+module.exports = server;
