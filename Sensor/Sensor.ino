@@ -193,7 +193,7 @@ void updateUltraSonic(){
 void sendData() {
 
   // form the string for the URL parameter:
-  String url = "http://chalos2.nctucs.net:8080/update?";
+  String url = "http://chalos2.nctucs.net:8080/update";
 
   // Send the HTTP PUT request
 
@@ -205,7 +205,7 @@ void sendData() {
   Serial.println(url+dataString+d1String+d2String+'}');
   myProcess.begin("curl");
   myProcess.addParameter("-H");
-  myProcess.addParameter("Content-Type: application/json");
+  myProcess.addParameter("Content-Type:application/json");
   myProcess.addParameter("--request");
   myProcess.addParameter("POST");
   myProcess.addParameter("--data");
