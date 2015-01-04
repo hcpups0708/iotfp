@@ -204,6 +204,8 @@ void sendData() {
   Serial.println("\n\nSending data...");
   Serial.println(url+dataString+d1String+d2String+'}');
   myProcess.begin("curl");
+  myProcess.addParameter("-H");
+  myProcess.addParameter("Content-Type: application/json");
   myProcess.addParameter("--request");
   myProcess.addParameter("POST");
   myProcess.addParameter("--data");
