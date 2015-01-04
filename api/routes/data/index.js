@@ -21,8 +21,6 @@ data.updateRadar = function(initial, data1, data2) {
 			now = (now<0)?1:7;
 			increase = !increase;
 		}
-		console.log('now:' + now);
-		console.log('increase?' + increase);
 
 		data.radar.set(now, Number(data1[i]));
 		data.radar.set(now+9, Number(data2[i]));

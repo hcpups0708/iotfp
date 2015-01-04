@@ -29,7 +29,7 @@ router.post('/move/:direct', function(req, res, next) {
 
 router.post('/update', function(req, res, next) {
 	var params = req.body;
-	console.log(params);
+	//console.log(params);
 	data.temperature.set(Number(params.t));
 	data.humidility.set(Number(params.h));
 	data.pressure.set(Number(params.p));
