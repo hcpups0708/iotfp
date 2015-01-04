@@ -1,5 +1,5 @@
 
-var rtcOrigin = 'localhost:8081';//'chalos2.nctucs.net:8081';
+var rtcOrigin = 'chalos2.nctucs.net:8081';
 
 var VideoStart = function() {
 	var video = document.createElement('video');
