@@ -39,9 +39,9 @@ Radar.renderData = function(canvas, data) {
     data.forEach(function(v,i) {
 		var x = canvas.width/2;
 		var y = canvas.height/2;
-		var r = v * (canvas.height/2)/100; 
-		r = (r > 100)? 100:r;
-		r = (r < 15)? 15:r;
+		var _v = (v > 100)? 100:v;
+		_v = (v < 15)? 15:v;
+		var r = _v * (canvas.height/2)/100; 
 		var iInit = (36 - 2 * i  - 1) * 10 * Math.PI / 180;
 		var iFinal = (36 - 2 * i + 1) * 10 * Math.PI / 180;
 		ctx.beginPath();
