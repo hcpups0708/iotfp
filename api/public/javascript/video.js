@@ -7,7 +7,7 @@ var VideoStart = function() {
 
 	var video = document.createElement('video');
 	video.setAttribute('id', 'video');
-
+	video.setAttribute('autoplay', 'autoplay');
 	//div.appendChild(video);
 	//document.body.appendChild(div);
 	document.body.appendChild(video);
