@@ -115,7 +115,10 @@ Compass.rotateTo = function(canvas, angle, timeUnit) {
 		i++;
 		Compass.now += rotation;
 		Compass.drawCompass(canvas, Compass.now);
-		if(i >= fps) Compass.drawCompass(canvas, angle);
+		if(i >= fps) {
+			Compass.drawCompass(canvas, angle);
+			Compass.now = angle;
+		}
 		else setTimeout(that, timeUnit/fps);
 	}), timeUnit/fps);
 }
