@@ -2,15 +2,15 @@
 var rtcOrigin = 'chalos2.nctucs.net:8081';
 
 var VideoStart = function() {
-	//var div = document.createElement('div');
-	//div.setAttribute('style', 'overflow:hidden;display:block;width:100%;height:100%;');
+	var div = document.createElement('div');
+	div.setAttribute('style', 'overflow:hidden;display:block;width:100%;height:100%;');
 
 	var video = document.createElement('video');
 	video.setAttribute('id', 'video');
 	video.setAttribute('autoplay', 'autoplay');
-	//div.appendChild(video);
-	//document.body.appendChild(div);
-	document.body.appendChild(video);
+	div.appendChild(video);
+	document.body.appendChild(div);
+	//document.body.appendChild(video);
 
 	startRtc();
 }
