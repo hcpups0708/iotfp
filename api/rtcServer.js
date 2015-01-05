@@ -17,4 +17,8 @@ webRTC.on('connect', function() {
 	console.log('connected');
 });
 
+webRTC.on('disconnect', function() {
+	console.log('disconnected');
+});
+
 module.exports = server;
