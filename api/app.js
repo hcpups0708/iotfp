@@ -49,6 +49,7 @@ app.use(function(err, req, res, next) {
 	});
 });
 
+app.listen(8080);
 //if(process.argv[2] == 'port') app.listen(process.argv[3]);
 //else app.listen(80);
 

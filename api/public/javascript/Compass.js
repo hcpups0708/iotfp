@@ -100,6 +100,7 @@ Compass.drawCompass = function(canvas, angle) {
 
 Compass.rotateTo = function(canvas, angle, timeUnit) {
     Compass.now = Compass.now % 360;
+    if(Compass.now == angle) return;
     var i = 0;
     var fps = 30;
     var rotation = Math.abs(Compass.now - angle);
